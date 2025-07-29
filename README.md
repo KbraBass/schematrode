@@ -101,6 +101,26 @@ Currently it is reading the `CEN-EN16931-UBL.sch` file from OpenPeppol's GitHub 
 
 
 ___
+#### xmldom
+
+**This code is just a bsae implementation to read a DOM and use XPath, but performance is lacking, so a no-go...**
+
+Run it by:
+```shell
+node xmldom/index.js
+```
+**NB!** Reading and loading XML DOM object about 5 seconds, which is promising, but XPath is a complete mess and eats memory like crazy and executes very, very slowly on the large file...
+
+20 minutes to extract three XPaths... 🤯
+
+```shell
+ReadFile: 239.557ms
+DOMParser: 5.033s
+useNamespaces: 0.099ms
+XPathSelect: 20:04.555 (m:ss.mmm)
+```
+
+___
 ### Requirements
 
 The goal was to be able to run the validation of both Shematron files in **under a minute** for the 58MB Invoice!

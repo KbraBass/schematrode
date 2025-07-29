@@ -9,12 +9,13 @@
   "author": "Anders Wasén",
   "license": "MIT License",
   "dependencies": {
+    "currency.js": "^2.0.4",
     "lodash": "^4.17.21",
     "saxon-js": "^2.7.0",
     "xml2js": "^0.6.2",
-    "xslt3": "^2.7.0",
-    "currency.js": "^2.0.4",
     "xmldom": "^0.6.0",
-    "xpath2": "^0.0.1-alpha-2"
+    "xpath": "^0.0.34",
+    "xpath2": "^0.0.1-alpha-2",
+    "xslt3": "^2.7.0"
   }
 }
