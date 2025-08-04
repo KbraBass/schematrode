@@ -41,10 +41,14 @@ class SchematronToXSLTTransformer:
         self.cache_dir = Path(__file__).parent / ".cache"
         self.temp_dir = Path(__file__).parent / ".temp"
         
-        # Create directories if they don't exist
-        self.output_dir.mkdir(exist_ok=True)
-        self.cache_dir.mkdir(exist_ok=True)
-        self.temp_dir.mkdir(exist_ok=True)
+        # Create directories if they don't exist with proper error handling
+        try:
+            self.output_dir.mkdir(exist_ok=True)
+            self.cache_dir.mkdir(exist_ok=True)
+            self.temp_dir.mkdir(exist_ok=True)
+        except (OSError, PermissionError) as e:
+            print(f"Error: Could not create required directories: {e}")
+            raise
         
         # ISO transformation stylesheet paths
         self.iso_dsdl_include = self.base_dir / "iso_dsdl_include.xsl"
@@ -90,7 +94,7 @@ class SchematronToXSLTTransformer:
         
         if cache_file.exists():
             try:
-                with open(cache_file, 'r') as f:
+                with open(cache_file, 'r', encoding='utf-8') as f:
                     lines = f.read().strip().split('\n')
                     if len(lines) >= 2:
                         return {
@@ -107,7 +111,7 @@ class SchematronToXSLTTransformer:
         cache_file = self.cache_dir / f"{sch_file.stem}.cache"
         
         try:
-            with open(cache_file, 'w') as f:
+            with open(cache_file, 'w', encoding='utf-8') as f:
                 f.write(f"{file_hash}\n")
                 f.write(f"{int(time.time())}\n")
         except Exception as e:
@@ -261,15 +265,20 @@ class SchematronToXSLTTransformer:
             # Copy final result to output directory overwriting any existing file
             print("  Copying final result to output directory...")
             output_xsl_path = self.output_dir / f"{sch_file.stem}.xsl"
-            if output_xsl_path.exists():
-                print(f"  Deleting existing file: {output_xsl_path}")
-                output_xsl_path.unlink()
             
-            # Create parent directory if needed
-            output_xsl_path.parent.mkdir(exist_ok=True, parents=True)
-            
-            # Copy the file (using shutil.copy2 to preserve metadata)
-            shutil.copy2(temp_output3, output_xsl_path)
+            try:
+                if output_xsl_path.exists():
+                    print(f"  Deleting existing file: {output_xsl_path}")
+                    output_xsl_path.unlink()
+                
+                # Create parent directory if needed
+                output_xsl_path.parent.mkdir(exist_ok=True, parents=True)
+                
+                # Copy the file (using shutil.copy2 to preserve metadata)
+                shutil.copy2(temp_output3, output_xsl_path)
+            except (OSError, PermissionError) as e:
+                print(f"  ❌ Error copying file: {e}")
+                return False
 
             # Add missing xmlns:xsd namespace if needed
             self.add_missing_xsd_namespace(output_xsl_path)
@@ -280,13 +289,15 @@ class SchematronToXSLTTransformer:
             
             print(f"  ✅ Successfully created {output_xsl_path}")
             
-            # Clean up intermediate files (optional)
-            try:
-                temp_output1.unlink()
-                temp_output2.unlink()
-                temp_output3.unlink()
-            except Exception:
-                pass  # Keep files for debugging if deletion fails
+            # Clean up intermediate files (optional - safer cleanup with better error handling)
+            for temp_file in [temp_output1, temp_output2, temp_output3]:
+                try:
+                    if temp_file.exists():
+                        temp_file.unlink()
+                except (OSError, PermissionError) as e:
+                    print(f"  ⚠️ Warning: Could not delete temporary file {temp_file.name}: {e}")
+                except Exception:
+                    pass  # Keep files for debugging if deletion fails for other reasons
             
             return True
             

@@ -33,7 +33,11 @@ class FastSchematronValidator:
         
         # Results directory for JSON outputs
         self.results_dir = Path(__file__).parent / "results"
-        self.results_dir.mkdir(exist_ok=True)
+        try:
+            self.results_dir.mkdir(exist_ok=True)
+        except (OSError, PermissionError) as e:
+            print(f"Error: Could not create results directory: {e}")
+            raise
         
         # Cache for compiled XSLT executables
         self.xslt_cache: Dict[str, Any] = {}
@@ -523,9 +527,13 @@ class FastSchematronValidator:
 def main():
     """Command line interface for the fast validator."""
     parser = argparse.ArgumentParser(description="Fast Schematron Validator for PEPPOL")
+    
+    # Get default samples directory using pathlib for cross-platform compatibility
+    default_samples_dir = str(Path(__file__).parent.parent / "Samples")
+    
     parser.add_argument("--samples-dir", 
                        help="Directory containing sample XML files to validate",
-                       default="../Samples")
+                       default=default_samples_dir)
     parser.add_argument("--force-rebuild", "-f", action="store_true",
                        help="Force rebuild of XSLT files from Schematron")
     parser.add_argument("--single-file", 
