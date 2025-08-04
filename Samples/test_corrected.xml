@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+  <cbc:ID>RCIAll-1217-001</cbc:ID>
+  <cbc:IssueDate>2024-12-17</cbc:IssueDate>
+  <cbc:DueDate>2025-01-02</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Test note</cbc:Note>
+  <cbc:TaxPointDate>2024-12-01</cbc:TaxPointDate>
+  <cbc:DocumentCurrencyCode>SEK</cbc:DocumentCurrencyCode>
+  <cbc:AccountingCost>4217:2323:2323</cbc:AccountingCost>
+  <cbc:BuyerReference>Chanduni-buyer-ref</cbc:BuyerReference>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2024-12-01</cbc:StartDate>
+    <cbc:EndDate>2024-12-31</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:OrderReference>
+    <cbc:ID>ORD-05932-F8Z4F8</cbc:ID>
+    <cbc:SalesOrderID>ORD-05932-F8Z4F8</cbc:SalesOrderID>
+  </cac:OrderReference>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>idr-RCI-1202-001</cbc:ID>
+      <cbc:IssueDate>2024-12-01</cbc:IssueDate>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>desp98</cbc:ID>
+  </cac:DespatchDocumentReference>
+  <cac:ReceiptDocumentReference>
+    <cbc:ID>rdr-y333433</cbc:ID>
+  </cac:ReceiptDocumentReference>
+  <cac:OriginatorDocumentReference>
+    <cbc:ID>odr-y333433</cbc:ID>
+  </cac:OriginatorDocumentReference>
+  <cac:ContractDocumentReference>
+    <cbc:ID>odr-y333433</cbc:ID>
+  </cac:ContractDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>20240311IPO001</cbc:ID>
+    <cac:Attachment>
+      <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="20240310IPO001.pdf">dmFsaWQgYmFzZTY0</cbc:EmbeddedDocumentBinaryObject>
+    </cac:Attachment>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>Att2</cbc:ID>
+    <cac:Attachment>
+      <cac:ExternalReference>
+        <cbc:URI>https://app.q.com/</cbc:URI>
+      </cac:ExternalReference>
+    </cac:Attachment>
+  </cac:AdditionalDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>pr-y333433</cbc:ID>
+  </cac:ProjectReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="0007">9999999999</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID>SE5567321234</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Qvalia AB</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>S:t Eriksgatan 26 4tr</cbc:StreetName>
+        <cbc:CityName>Stockholm</cbc:CityName>
+        <cbc:PostalZone>11239</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>SE556732123401</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Qvalia AB</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="0007">9999999999</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Supplier chanduni</cbc:Name>
+        <cbc:Telephone>464564564</cbc:Telephone>
+        <cbc:ElectronicMail>chanduni+supplier@a.se</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="0007">0000000000</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID>SE5562345678</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Cartoon AB</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Musterweg 1</cbc:StreetName>
+        <cbc:CityName>Musterhausen</cbc:CityName>
+        <cbc:PostalZone>12345</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>SE556234567801</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Cartoon AB</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="0007">0000000000</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customer chanduni</cbc:Name>
+        <cbc:Telephone>1234567890</cbc:Telephone>
+        <cbc:ElectronicMail>chanduni+customer@a.se</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2024-12-17</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="0088">7300010000001</cbc:ID>
+      <cac:Address>
+        <cbc:StreetName>Musterweg 2</cbc:StreetName>
+        <cbc:CityName>Musterhausen</cbc:CityName>
+        <cbc:PostalZone>12345</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+    <cac:DeliveryParty>
+      <cac:PartyName>
+        <cbc:Name>Delivery Party Name</cbc:Name>
+      </cac:PartyName>
+    </cac:DeliveryParty>
+  </cac:Delivery>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
+    <cbc:PaymentID>432948234343424</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>IBAN32423424</cbc:ID>
+      <cbc:Name>Qvalia AB</cbc:Name>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID>ABIDSES33</cbc:ID>
+      </cac:FinancialInstitutionBranch>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>14 days net, overdue charges may be applied</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Discount</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="SEK">0</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>25</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="SEK">700.01</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="SEK">2800.06</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="SEK">700.01</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="SEK">2800.06</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="SEK">2800.06</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="SEK">3500.07</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="SEK">0</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="SEK">3500.07</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="SEK">2800.06</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>0</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Rabatt</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="SEK">50</cbc:Amount>
+    </cac:AllowanceCharge>
+    <cac:Item>
+      <cbc:Description>A description for an item.The item description allows for describing the item and its features in more detail than the Item name.</cbc:Description>
+      <cbc:Name>Att leda utan att vara chef &lt;participant&gt; </cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>buyerID_6437383</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>103</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="0160">sii_53733</cbc:ID>
+      </cac:StandardItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+      </cac:OriginCountry>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="STI">9873242</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="STI">9873243</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>StandardItemIdentification</cbc:Name>
+        <cbc:Value>a5f4651f-418c-ed11-81ad-0022489934a0</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="SEK">29500.56</cbc:PriceAmount>
+      <cbc:BaseQuantity>10</cbc:BaseQuantity>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:Amount currencyID="SEK">100</cbc:Amount>
+      </cac:AllowanceCharge>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>
